@@ -25,4 +25,15 @@ print(double())
 
 
 #First Class Functions:
+def loud_greeting(name):
+    return f"HELLO {name.upper()}!"
+
+def quiet_greeting(name):
+    return f"Hello {name}..."
+
+from typing import Callable
+def greet(name: str, greeting: Callable[[str],str]) -> str:
+    return greeting(name)
+
+print(greet("Andy", loud_greeting))
 
